@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Leader board</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="row header-content">
+        <h2>Leader board</h2>
+      </div>
+    </header>
+    <main class="main">
+      <div class="row board-header">
+        <h1>Leader Board</h1>
+      </div>
+      <div class="row board-content">
+        <div class="list-container">
+          <div class="list-header">
+            <h3>Your resent score</h3>
+            <button class="refresh-btn">Refresh</button>
+          </div>
+          <ul class="list">
+            <li class="list-item">Name: 50</li>
+            <li class="list-item">Name:40</li>
+            <li class="list-item">Name: 100</li>
+            <li class="list-item">Name: 60</li>
+            <li class="list-item">Name: 90</li>
+          </ul>
+        </div>
+        <div class="form-container">
+          <h3>Add your score</h3>
+          <form class="form">
+            <input
+              type="text"
+              name="name"
+              aria-label="Your name"
+              placeholder="Your Name"
+            />
+            <input
+              type="number"
+              name="score"
+              aria-label="Your score"
+              placeholder="Your Score"
+            />
+            <button type="submit" class="submit-btn">Submit</button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="row footer-content">
+        <p>&copy; 2022. All rights Reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
