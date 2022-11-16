@@ -1,29 +1,30 @@
-import "./style.css";
+import './style.css';
 
-const list = document.querySelector(".list-Items");
+const list = document.querySelector('.list-Items');
 
 const Items = [
   {
-    Name: "robert",
+    Name: 'robert',
     score: 100,
   },
   {
-    Name: "robert",
+    Name: 'robert',
     score: 50,
   },
   {
-    Name: "robert",
+    Name: 'robert',
     score: 80,
   },
   {
-    Name: "benjamin",
+    Name: 'benjamin',
     score: 200,
   },
 ];
 
-let listItems;
+// let listItems;
 const populateTable = () => {
-  const ulTag = document.createElement("ul");
+  let listItems = '';
+  const ulTag = document.createElement('ul');
   Items.forEach((item) => {
     listItems += `<li class="list-item">${item.Name}: ${item.score}
   </li>`;

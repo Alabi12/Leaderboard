@@ -46,10 +46,10 @@ body {
 .list-header {
   display: flex;
   align-items: center;
-  gap: 6rem;
+  justify-content: space-between;
 }
 
-.list {
+ul {
   margin-top: 2rem;
   list-style: none;
   border: 1px solid #e6e6e6;
