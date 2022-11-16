@@ -1,7 +1,4 @@
-import { API_KEY } from './secret.js';
-
-console.log(API_KEY);
-
+const API_KEY = 'AbRqF6mlxYvxdLfl2NB0';
 const API_LINK_REGISTER = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/';
 const API_LINK_POST_SCORE = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${API_KEY}/scores`;
 
@@ -19,10 +16,9 @@ export const registerRequests = async (name) => {
 
     const result = await response.json();
 
-    console.log(result);
+    return result;
   } catch (err) {
-    console.log('ERROR!!!');
-    console.log(err);
+    return 'ERROR!!!';
   }
 };
 
@@ -43,9 +39,9 @@ export const postScore = async (user, score) => {
     const response = await fetch(API_LINK_POST_SCORE, options);
 
     const result = await response.json();
-    console.log(result);
+    return result;
   } catch (error) {
-    console.log(error);
+    return error;
   }
 };
 
@@ -64,6 +60,6 @@ export const getScores = async () => {
     const result = await response.json();
     return result;
   } catch (error) {
-    console.log(error);
+    return error;
   }
 };

@@ -1,5 +1,5 @@
 import './style.css';
-import { registerRequests, postScore, getScores } from './api.js';
+import { postScore, getScores } from './api.js';
 
 const list = document.querySelector('.list');
 const refreshBtn = document.querySelector('.refresh-btn');
