@@ -58,6 +58,7 @@ body {
 .list-item {
   padding: 0.2rem;
   padding-left: 1rem;
+  list-style: none;
 }
 
 .list-item:nth-child(even) {

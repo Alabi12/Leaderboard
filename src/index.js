@@ -1,41 +1,35 @@
-import './style.css';
+import "./style.css";
 
-const todoContainer = document.querySelector('.todo-list');
+const list = document.querySelector(".list-Items");
 
-const toDoItems = [
+const Items = [
   {
-    description: 'My first to do',
-    completed: false,
-    index: 0,
+    Name: "robert",
+    score: 100,
   },
   {
-    description: 'My second to do',
-    completed: false,
-    index: 1,
+    Name: "robert",
+    score: 50,
   },
   {
-    description: 'My third to do',
-    completed: false,
-    index: 2,
+    Name: "robert",
+    score: 80,
+  },
+  {
+    Name: "benjamin",
+    score: 200,
   },
 ];
 
-const itemMarkupGen = (data) => `<li class="todo" data-index="${data.index}" data-completed="${data.completed}"> 
-  <input type="checkbox" id="${data.index}" name="${data.index}" value="Bike">
-  <label for="${data.index}"> ${data.description} <i
-          class="fa-list-icon fa-solid fa-ellipsis-vertical"></i></label>
+let listItems;
+const populateTable = () => {
+  const ulTag = document.createElement("ul");
+  Items.forEach((item) => {
+    listItems += `<li class="list-item">${item.Name}: ${item.score}
   </li>`;
-
-const populateList = (arr) => {
-  let listString = '';
-
-  const sortedArr = arr.sort((a, b) => a.index - b.index);
-
-  sortedArr.forEach((item) => {
-    listString += itemMarkupGen(item);
   });
-
-  todoContainer.innerHTML = listString;
+  ulTag.innerHTML = listItems;
+  list.appendChild(ulTag);
 };
 
-populateList(toDoItems);
+populateTable();
