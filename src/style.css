@@ -20,8 +20,6 @@ body {
 .footer {
   min-height: 6rem;
   background-color: #c1c1c1;
-  display: flex;
-  align-items: center;
 }
 
 .main {
@@ -34,10 +32,14 @@ body {
   margin: 0 auto;
 }
 
+.header,
+.footer {
+  display: flex;
+  align-items: center;
+}
 .board-header {
   padding-bottom: 4rem;
 }
-
 .board-content {
   display: flex;
   gap: 4rem;
@@ -47,22 +49,22 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 6rem;
 }
 
-ul {
+.list {
   margin-top: 2rem;
   list-style: none;
   border: 1px solid #e6e6e6;
 }
 
+.list-item:nth-child(even) {
+  background-color: #e6e6e6;
+}
+
 .list-item {
   padding: 0.2rem;
   padding-left: 1rem;
-  list-style: none;
-}
-
-.list-item:nth-child(even) {
-  background-color: #e6e6e6;
 }
 
 .list-container,

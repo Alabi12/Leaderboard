@@ -1,36 +1,35 @@
 import './style.css';
+import { registerRequests, postScore, getScores } from './api.js';
 
-const list = document.querySelector('.list-Items');
+const list = document.querySelector('.list');
+const refreshBtn = document.querySelector('.refresh-btn');
+const form = document.querySelector('.form');
 
-const Items = [
-  {
-    Name: 'robert',
-    score: 100,
-  },
-  {
-    Name: 'robert',
-    score: 50,
-  },
-  {
-    Name: 'robert',
-    score: 80,
-  },
-  {
-    Name: 'benjamin',
-    score: 200,
-  },
-];
-
-// let listItems;
-const populateTable = () => {
-  let listItems = '';
-  const ulTag = document.createElement('ul');
-  Items.forEach((item) => {
-    listItems += `<li class="list-item">${item.Name}: ${item.score}
-  </li>`;
-  });
-  ulTag.innerHTML = listItems;
-  list.appendChild(ulTag);
+const populate = async () => {
+  try {
+    let listMarkup = '';
+    const response = await getScores();
+    const scores = response.result;
+    scores.forEach((score) => {
+      listMarkup += `<li class="list-item">${score.user}: ${score.score}</li>`;
+    });
+    list.innerHTML = '';
+    list.insertAdjacentHTML('afterbegin', listMarkup);
+  } catch (error) {
+    console.log(error);
+  }
 };
 
-populateTable();
+// Refresh UI
+refreshBtn.addEventListener('click', populate);
+
+// Submit data
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const name = e.target.name.value;
+  const score = e.target.score.value;
+
+  postScore(name, score);
+  e.target.name.value = '';
+  e.target.score.value = '';
+});
