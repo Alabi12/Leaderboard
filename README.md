@@ -13,7 +13,7 @@
 
 ## Live Demo
 
-[Live Demo Link]()
+[Live Demo Link]("https://alabi12.github.io/Leaderboard/")
 
 ## Getting Started
 
