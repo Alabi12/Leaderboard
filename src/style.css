@@ -13,16 +13,31 @@ html {
 body {
   font-family: "Inter", sans-serif;
   font-size: 1.6rem;
-  color: #333;
+}
+
+h2 {
+  font-weight: 900;
+  color: #f30909;
+}
+
+h3 {
+  color: #f30909;
+  font-weight: 900;
 }
 
 .header,
 .footer {
   min-height: 6rem;
   background-color: #c1c1c1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main {
+  background-image: url("/src/img.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
   min-height: calc(100vh - 12rem);
   padding: 4rem 0;
 }
@@ -32,8 +47,30 @@ body {
   margin: 0 auto;
 }
 
+.header-content,
+.links-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.links-content {
+  gap: 5rem;
+  list-style: none;
+}
+
+.links {
+  text-decoration: none;
+  color: #d11010;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 .board-header {
-  padding-bottom: 4rem;
+  padding-bottom: 2rem;
+  color: #272020;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .board-content {
@@ -45,13 +82,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 6rem;
 }
 
 .list {
   margin-top: 2rem;
   list-style: none;
   border: 1px solid #e6e6e6;
+  background-color: rgb(41, 40, 28);
+  box-shadow: 5px 5px;
+  border-radius: 2rem;
 }
 
 .list-item {
@@ -61,11 +100,13 @@ body {
 
 .list-item:nth-child(even) {
   background-color: #e6e6e6;
+  color: rgb(98, 60, 60);
 }
 
 .list-container,
 .form-container {
   flex: 1;
+  padding-top: 4rem;
 }
 
 .form-container {
@@ -94,6 +135,15 @@ body {
   padding: 0.5rem 2rem;
   cursor: pointer;
   border: 1px solid #e6e6e6;
+  background-color: #d11010;
+  border-radius: 2rem;
+  box-shadow: 0.1rem 0.3rem;
+}
+
+.refresh-btn:hover,
+.submit-btn:hover {
+  background-color: #d11010;
+  color: #c1c1c1;
 }
 
 @media (max-width: 768px) {
